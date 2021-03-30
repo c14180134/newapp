@@ -1,20 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Notes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen>
+  <ion-label position="stacked">Tanggal</ion-label>
+  <ion-input [(ngModel)] ="tanggal" type="date"></ion-input>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card-title>Title</ion-card-title>
+    <ion-textarea placeholder="input here" name="title" [(ngModel)]="judul"></ion-textarea>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>
+          
+        </ion-card-header>
+        <ion-card-title>Description</ion-card-title>
+        <ion-card-content>
+          <ion-item>
+            <ion-item>
+              <ion-textarea placeholder="input here" [(ngModel)]="description"></ion-textarea>
+            </ion-item>
+          </ion-item>
+  
+        </ion-card-content>
+        
+      </ion-card>
+      
+    </ion-row>
+    <ion-button (click)="savenotes(tanggal,judul,isi)" expand="full">ADD</ion-button>
   </div>
+  <ion-button routerLink="/halaman-baru">Pindah Halaman</ion-button>
 </ion-content>

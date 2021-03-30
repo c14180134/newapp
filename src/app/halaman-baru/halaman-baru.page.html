@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>halamanBaru</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+  <ion-item *ngFor="let item of myarray">
+    <ion-label position="stacked">Judul</ion-label>
+    {{item.judul}}
+    <ion-label position="stacked">Isi</ion-label>
+    {{item.isi}}
+    <ion-label position="stacked">Tanggal</ion-label>
+    {{item.date}}
+    <ng-container *ngIf='item.fav === false'><ion-button (click)="favourite(item.id)">Fav</ion-button></ng-container>
+    <ng-container *ngIf='item.fav === true'><ion-button (click)="unfav(item.id)">UnFav</ion-button></ng-container>
+    <ion-button (click)="edits(item.id)">edit</ion-button>
+  </ion-item>
+</ion-grid>
+<ion-button routerLink="/halaman3">List Fav</ion-button>
+
+</ion-content>

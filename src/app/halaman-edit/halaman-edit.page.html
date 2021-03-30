@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>halaman edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3>Judul</h3>
+  <textarea [(ngModel)]="tite">{{judul}}</textarea>
+  <h4>Isi</h4>
+  <textarea [(ngModel)]="desc">{{isi}}</textarea>
+
+  <ion-button (click)="commit(tite,desc)"></ion-button>
+
+</ion-content>

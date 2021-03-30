@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>halaman3</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-item *ngFor="let item of myarray">
+      <ng-container *ngIf='item.fav === true'>
+      <ion-label position="stacked">Judul</ion-label>
+      {{item.judul}}
+      <ion-label position="stacked">Isi</ion-label>
+      {{item.isi}}
+      <ion-label position="stacked">Tanggal</ion-label>
+      {{item.date}}
+      <ion-label position="stacked">Status</ion-label>
+      {{status}}<br>
+    </ng-container>
+    </ion-item>
+  </ion-grid>
+</ion-content>

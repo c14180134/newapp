@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'halaman-baru',
+    loadChildren: () => import('./halaman-baru/halaman-baru.module').then( m => m.HalamanBaruPageModule)
+  },
+  {
+    path: 'halaman3',
+    loadChildren: () => import('./halaman3/halaman3.module').then( m => m.Halaman3PageModule)
+  },
+  {
+    path: 'halaman-edit/:idnote',
+    loadChildren: () => import('./halaman-edit/halaman-edit.module').then( m => m.HalamanEditPageModule)
+  },
 ];
 
 @NgModule({
